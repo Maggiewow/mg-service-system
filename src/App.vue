@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-22 15:37:10
+ * @LastEditTime: 2021-12-30 15:59:14
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\App.vue
@@ -13,6 +13,9 @@
 </template>
 
 <style lang="less">
+.ivu-message {
+  z-index: 2001 !important;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
