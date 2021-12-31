@@ -179,10 +179,10 @@ export default {
     this.getAllOrgs();
     this.getDataList();
     // 测试
-    this.$Message.info({
-      content: '测试测试测试',
-      duration: 500,
-    });
+    // this.$Message.info({
+    //   content: '测试测试测试',
+    //   duration: 500,
+    // });
   },
   methods: {
     refreshParam() {
