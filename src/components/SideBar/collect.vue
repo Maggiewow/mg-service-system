@@ -237,13 +237,26 @@ export default {
   box-sizing: border-box;
   background-color: #f2f2f2;
   .ivu-tabs {
-    height: 72px;
+    height: 62px;
+    .ivu-tabs-bar {
+      margin-bottom: 0;
+    }
   }
 
-  .filter .ivu-input-wrapper {
-    width: 300px;
-    display: flex;
-    align-items: center;
+  .filter {
+    margin-top: -10px;
+    .ivu-input-wrapper {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      /deep/ .ivu-input-inner-container {
+        width: 100%;
+        .ivu-input-icon,
+        .ivu-input-suffix {
+          top: 18px;
+        }
+      }
+    }
   }
   .collect-list {
     margin: 10px 0;
@@ -251,7 +264,7 @@ export default {
     overflow-y: scroll;
     height: 444px;
     .collect-item {
-      margin: 10px 0;
+      margin-bottom: 10px;
       padding: 5px 15px;
       border: 1px solid #ececec;
       background: #fff;

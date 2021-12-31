@@ -233,13 +233,17 @@ export default {
   box-sizing: border-box;
   background-color: #f2f2f2;
   .ivu-tabs {
-    height: 72px;
+    height: 62px;
+    .ivu-tabs-bar {
+      margin-bottom: 0;
+    }
   }
 
   .filter-line {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 18px;
     /deep/ .ivu-select-selection {
       display: flex;
       div {
@@ -249,6 +253,13 @@ export default {
     /deep/ .ivu-input-wrapper {
       display: flex;
       align-items: center;
+      /deep/ .ivu-input-inner-container {
+        width: 100%;
+        .ivu-input-icon,
+        .ivu-input-suffix {
+          top: 18px;
+        }
+      }
     }
     .filter-select {
       width: 160px;
@@ -256,6 +267,7 @@ export default {
     }
     .filter-input {
       width: 200px;
+      margin-top: -22px;
     }
   }
   .pend-list {
@@ -264,7 +276,7 @@ export default {
     overflow-y: scroll;
     height: 444px;
     .pend-item {
-      margin: 10px 0;
+      margin-bottom: 10px;
       padding: 5px 15px;
       border: 1px solid #ececec;
       background: #fff;

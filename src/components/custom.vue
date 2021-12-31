@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-30 17:01:09
+ * @LastEditTime: 2021-12-31 10:44:23
 -->
 <template>
   <div class="custom-main">
@@ -124,6 +124,9 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.custom-main ::v-deep .ivu-table {
+  font-size: 14px !important; // 14 ==> 16
+}
 .over_hide_1 {
   overflow: hidden;
   text-overflow: ellipsis;
