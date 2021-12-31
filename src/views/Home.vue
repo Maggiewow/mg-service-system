@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-22 15:39:03
+ * @LastEditTime: 2021-12-31 17:58:38
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\views\Home.vue
 -->
 <template>
   <div class="comps">
-    <custom-system></custom-system>
+    <custom-system ref="custom"></custom-system>
   </div>
 </template>
 
@@ -20,6 +20,9 @@ export default {
   name: 'Home',
   components: {
     CustomSystem,
+  },
+  mounted() {
+    console.log('custom', this.$refs.custom.openDialog);
   },
 };
 </script>

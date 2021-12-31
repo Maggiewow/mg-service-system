@@ -39,6 +39,7 @@
       </div>
 
       <Table
+        class="data-table"
         :columns="activeType === 'group' ? groupColumns : singleColumns"
         :data="dataList"
         :loading="isLoading"
@@ -177,6 +178,11 @@ export default {
     }
     this.getAllOrgs();
     this.getDataList();
+    // 测试
+    this.$Message.info({
+      content: '测试测试测试',
+      duration: 500,
+    });
   },
   methods: {
     refreshParam() {
@@ -238,15 +244,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-/deep/ .ivu-modal-wrap {
-  z-index: 2002;
-}
-// /deep/ .ivu-table-body {
-//   margin-top: -20px;
-// }
-
 .data-page {
   height: 100%;
+  width: 891px;
   padding: 5px 15px 0;
   box-sizing: border-box;
   background-color: #fff;
@@ -254,7 +254,7 @@ export default {
     height: 72px;
   }
   .list-block {
-    padding: 0 15px 10px;
+    padding: 0 10px 10px 0;
     max-height: 494px;
     overflow-y: scroll;
   }
@@ -279,6 +279,9 @@ export default {
     .filter-input {
       width: 200px;
     }
+  }
+  .data-table {
+    margin-top: 10px;
   }
 }
 .page-show {

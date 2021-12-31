@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-31 14:24:30
+ * @LastEditTime: 2021-12-31 17:58:33
 -->
 <template>
   <div class="custom-main">
@@ -42,6 +42,10 @@ export default {
     console.log('销毁');
   },
   methods: {
+    openDialog() {
+      console.log('openChatDialog', this.$refs.yimu.openChatDialog);
+      this.$refs.yimu.openChatDialog();
+    },
     getCurrentChatUser() {
       getCurrentUser()
         .then((res) => {

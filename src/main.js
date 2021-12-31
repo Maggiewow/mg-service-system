@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-31 10:06:24
+ * @LastEditTime: 2021-12-31 15:32:07
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\main.js
@@ -23,8 +23,8 @@ import {
   Icon,
   Modal,
   Page,
-} from 'view-design';
-import 'view-design/dist/styles/iview.css';
+} from 'iview';
+import 'iview/dist/styles/iview.css';
 
 import App from './App.vue';
 import store from './store';
