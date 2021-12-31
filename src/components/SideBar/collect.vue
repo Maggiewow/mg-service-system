@@ -184,7 +184,7 @@ export default {
       fetchCollectList(this.page, this.activeType, this.collectKeyword).then((res) => {
         console.log('收藏列表', res.data.data);
         if (res.status === 200) {
-          const { list, num, pages } = res.data.data;
+          const { list = [], pages = 1 } = res.data.data;
           let info = list.map((item) => ({
             ...item,
             type: TYPE_MSG_OBJ[item.imType] || 'text',
@@ -237,7 +237,7 @@ export default {
   box-sizing: border-box;
   background-color: #f2f2f2;
   .ivu-tabs {
-    height: 80px;
+    height: 72px;
   }
 
   .filter .ivu-input-wrapper {

@@ -233,7 +233,7 @@ export default {
   box-sizing: border-box;
   background-color: #f2f2f2;
   .ivu-tabs {
-    height: 80px;
+    height: 72px;
   }
 
   .filter-line {

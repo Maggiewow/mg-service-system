@@ -50,7 +50,7 @@
   "author": "Maggiewow",
   "license": "ISC",
   "publishConfig": {
-    "registry": "http://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   },
   "bugs": {
     "url": "https://github.com/Maggiewow/mg-service-system/issues"

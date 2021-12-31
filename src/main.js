@@ -1,17 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-30 16:32:09
+ * @LastEditTime: 2021-12-31 10:06:24
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\main.js
  */
 
 import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import store from './store';
-import config from '@/config';
 
 import {
   Button,
@@ -29,13 +25,15 @@ import {
   Page,
 } from 'view-design';
 import 'view-design/dist/styles/iview.css';
-// Vue.use(ViewUI);
+
+import App from './App.vue';
+import store from './store';
+import config from '@/config';
+import router from './router';
 
 import yimuIm from 'yimu-im';
 import LemonIMUI from 'lemon-imui';
 import 'lemon-imui/dist/index.css';
-
-console.log('yimuIm', yimuIm);
 
 Vue.use(yimuIm);
 Vue.use(LemonIMUI);

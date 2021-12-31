@@ -251,7 +251,7 @@ export default {
   box-sizing: border-box;
   background-color: #fff;
   .ivu-tabs {
-    height: 80px;
+    height: 72px;
   }
   .list-block {
     padding: 0 15px 10px;
