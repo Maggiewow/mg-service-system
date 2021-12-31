@@ -4,10 +4,17 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 16:12:19
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-30 17:27:30
+ * @LastEditTime: 2021-12-31 11:32:09
  */
 import { BaseUrl, CustomUrl, PAGE_SIZE, BIG_PAGE_SIZE } from './constant';
 import commonAxios from 'ym-bridge-shandianyun';
+
+export const fetchSideBarConfig = () => {
+  return commonAxios.request({
+    url: BaseUrl + '/module/side-options',
+    method: 'get',
+  });
+};
 
 // 数据统计
 // 群组统计 message_amount 消息数  person_amount 人数  mark_amount 标记数  to_do_amount 待完成数  finish_amount 完成数

@@ -249,7 +249,7 @@ export default {
       margin: 10px 0;
       padding-bottom: 40px;
       .mark-item {
-        margin: 10px 0;
+        margin-bottom: 10px;
         padding: 5px 15px;
         border: 1px solid #ececec;
         background: #fff;

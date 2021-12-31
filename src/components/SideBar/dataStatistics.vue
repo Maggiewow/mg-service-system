@@ -1,5 +1,5 @@
 <template>
-  <div class="pend-page">
+  <div class="data-page">
     <Tabs v-model="activeType">
       <TabPane label="群聊统计" name="group"></TabPane>
       <TabPane label="个人统计" name="single"></TabPane>
@@ -244,8 +244,8 @@ export default {
 // /deep/ .ivu-table-body {
 //   margin-top: -20px;
 // }
-// 待办事项
-.pend-page {
+
+.data-page {
   height: 100%;
   padding: 5px 15px 0;
   box-sizing: border-box;
@@ -278,89 +278,6 @@ export default {
     }
     .filter-input {
       width: 200px;
-    }
-  }
-  .pend-list {
-    margin: 10px 0;
-    padding-bottom: 40px;
-    overflow-y: scroll;
-    height: 444px;
-    .pend-item {
-      margin: 10px 0;
-      padding: 5px 15px;
-      border: 1px solid #ececec;
-      background: #fff;
-      border-radius: 4px;
-      font-size: 14px;
-      line-height: 30px;
-
-      display: flex;
-      align-items: center;
-      .pend-status {
-        width: 10%;
-
-        .checked-circle {
-          margin-left: 5px;
-          width: 18px;
-          height: 18px;
-          border-color: #409eff;
-          border-radius: 100%;
-          background: #409eff;
-          position: relative;
-          &::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transition: transform 0.15s ease-in;
-            transform: translate(-50%, -50%) scale(1);
-            width: 6px;
-            height: 6px;
-            border-radius: 100%;
-            background-color: #fff;
-          }
-        }
-        .unchecked-circle {
-          cursor: pointer;
-          margin-left: 5px;
-          width: 18px;
-          height: 18px;
-          border: 1px solid #dcdfe6;
-          border-radius: 100%;
-          background-color: #fff;
-          box-sizing: border-box;
-        }
-        /deep/ .el-radio__inner {
-          width: 18px;
-          height: 18px;
-          &::after {
-            width: 6px;
-            height: 6px;
-          }
-        }
-      }
-      .main-item {
-        width: 90%;
-      }
-      .msg-content {
-        padding: 4px 0;
-        line-height: 20px;
-        color: #333;
-      }
-      .send-user {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .user {
-          margin-right: 20px;
-          font-size: 12px;
-          color: #333;
-        }
-        .time {
-          color: #999;
-          font-size: 12px;
-        }
-      }
     }
   }
 }

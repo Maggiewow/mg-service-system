@@ -223,9 +223,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-/deep/ .ivu-modal-wrap {
-  z-index: 2002;
-}
 // 待办事项
 .pend-page {
   height: 100%;
@@ -264,7 +261,7 @@ export default {
     overflow-y: scroll;
     height: 444px;
     .pend-item {
-      margin: 10px 0;
+      margin-bottom: 10px;
       padding: 5px 15px;
       border: 1px solid #ececec;
       background: #fff;

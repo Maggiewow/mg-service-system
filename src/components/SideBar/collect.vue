@@ -251,7 +251,7 @@ export default {
     overflow-y: scroll;
     height: 444px;
     .collect-item {
-      margin: 10px 0;
+      margin-bottom: 10px;
       padding: 5px 15px;
       border: 1px solid #ececec;
       background: #fff;

@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-30 17:01:09
+ * @LastEditTime: 2021-12-31 14:24:30
 -->
 <template>
   <div class="custom-main">
@@ -14,13 +14,13 @@
 
 <script>
 // @ is an alias to /src
-import testComponent from './testComponent.vue';
 import Collect from './SideBar/collect.vue';
 import Mark from './SideBar/mark.vue';
 import Pending from './SideBar/pending.vue';
 import DataStatistics from './SideBar/dataStatistics.vue';
 
 import { getCurrentUser } from '@/api/data.js';
+import { fetchSideBarConfig } from '@/api/chat.js';
 
 export default {
   name: 'custom',
@@ -33,6 +33,7 @@ export default {
   },
   created() {
     this.getCurrentChatUser();
+    this.getSideBar();
   },
   mounted() {
     setTimeout(this.setInitMenu, 500);
@@ -56,6 +57,18 @@ export default {
             sessionStorage.setItem('current_user', JSON.stringify(user));
             sessionStorage.setItem('current_userId', id);
             console.log('current_user', user);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    getSideBar() {
+      fetchSideBarConfig()
+        .then((res) => {
+          if (res.status === 200) {
+            console.log('res.data', res.data);
+            // this.setInitMenu()
           }
         })
         .catch((err) => {
@@ -124,6 +137,16 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+/deep/ .ivu-modal-wrap {
+  z-index: 2002;
+}
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+}
 .over_hide_1 {
   overflow: hidden;
   text-overflow: ellipsis;
