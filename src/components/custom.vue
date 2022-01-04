@@ -4,11 +4,16 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-31 17:58:33
+ * @LastEditTime: 2022-01-04 14:13:09
 -->
 <template>
   <div class="custom-main">
-    <yimu-im ref="yimu" :customMenu="customMenu" :fromSystem="fromSystem"></yimu-im>
+    <yimu-im
+      ref="yimu"
+      :customMenu="customMenu"
+      :fromSystem="fromSystem"
+      @change-menu="handleChangeMenu"
+    ></yimu-im>
   </div>
 </template>
 
@@ -21,6 +26,7 @@ import DataStatistics from './SideBar/dataStatistics.vue';
 
 import { getCurrentUser } from '@/api/data.js';
 import { fetchSideBarConfig } from '@/api/chat.js';
+import bus from '@/libs/bus';
 
 export default {
   name: 'custom',
@@ -29,6 +35,7 @@ export default {
       customMenu: [],
       fromSystem: 'cs',
       currentUser: {},
+      curMenuName: 'messages',
     };
   },
   created() {
@@ -45,6 +52,15 @@ export default {
     openDialog() {
       console.log('openChatDialog', this.$refs.yimu.openChatDialog);
       this.$refs.yimu.openChatDialog();
+    },
+    handleChangeMenu(menuName) {
+      this.curMenuName = menuName;
+      console.log('home', menuName);
+      // collect mark pending data
+      if (['collect', 'mark', 'pending', 'data'].includes(menuName)) {
+        // 通知更新接口
+        bus.$emit('update' + menuName);
+      }
     },
     getCurrentChatUser() {
       getCurrentUser()

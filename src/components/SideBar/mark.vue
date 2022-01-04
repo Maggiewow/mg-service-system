@@ -73,6 +73,7 @@ import InfiniteLoading from 'vue-infinite-loading';
 
 import HistoryRecord from './history.vue';
 import { fetchMarkList } from '@/api/event';
+import bus from '@/libs/bus';
 
 const TYPE_MSG_OBJ = {
   'RC:ReferenceMsg': 'text',
@@ -123,6 +124,11 @@ export default {
       this.user = JSON.parse(userInfo);
     }
 
+    bus.$on('updatemark', () => {
+      this.markKeyword = '';
+      this.refreshParam();
+      this.$nextTick(this.getMarkList);
+    });
     this.getMarkList();
   },
   methods: {

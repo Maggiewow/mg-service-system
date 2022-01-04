@@ -52,6 +52,7 @@
 
 <script>
 import { fetchGroupStats, fetchSingleStats, fetchAllOrgs } from '@/api/chat';
+import bus from '@/libs/bus';
 
 export default {
   name: 'DataStatistics',
@@ -78,7 +79,7 @@ export default {
           key: 'group',
           align: 'center',
           render: (h, params) => {
-            return h('span', params.row.group.name || '');
+            return h('span', params.row.group ? params.row.group.name : '');
           },
         },
         {
@@ -161,7 +162,6 @@ export default {
           order_field: null,
           order_type: null,
         };
-        this.refreshParam();
       }
     },
     filterForm: {
@@ -176,13 +176,19 @@ export default {
     if (userInfo) {
       this.user = JSON.parse(userInfo);
     }
+
+    bus.$on('updatedata', () => {
+      this.filterForm = {
+        org_id: null,
+        type: '',
+        keyword: '',
+        order_field: null,
+        order_type: null,
+      };
+    });
+
     this.getAllOrgs();
     this.getDataList();
-    // 测试
-    // this.$Message.info({
-    //   content: '测试测试测试',
-    //   duration: 500,
-    // });
   },
   methods: {
     refreshParam() {
@@ -192,7 +198,6 @@ export default {
     },
     getAllOrgs() {
       fetchAllOrgs().then((res) => {
-        console.log('机构列表', res.data.data);
         if (res.status === 200) {
           this.orgOptions = res.data.data;
         }

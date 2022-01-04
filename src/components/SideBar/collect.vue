@@ -76,9 +76,9 @@
 
 <script>
 import InfiniteLoading from 'vue-infinite-loading';
-
 import HistoryRecord from './history.vue';
 import { fetchCollectList } from '@/api/event';
+import bus from '@/libs/bus';
 
 const TYPE_MSG_OBJ = {
   'RC:ReferenceMsg': 'text',
@@ -128,6 +128,11 @@ export default {
     if (userInfo) {
       this.user = JSON.parse(userInfo);
     }
+    bus.$on('updatecollect', () => {
+      this.collectKeyword = '';
+      this.refreshParam();
+      this.$nextTick(this.getCollectList);
+    });
 
     this.getCollectList();
   },

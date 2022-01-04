@@ -77,6 +77,7 @@
 <script>
 import InfiniteLoading from 'vue-infinite-loading';
 import { fetchPendingList, completePending } from '@/api/event';
+import bus from '@/libs/bus';
 
 export default {
   name: 'PendingList',
@@ -125,6 +126,11 @@ export default {
     if (userInfo) {
       this.user = JSON.parse(userInfo);
     }
+
+    bus.$on('updatepending', () => {
+      this.refreshParam();
+      this.$nextTick(this.getPendList);
+    });
 
     this.getPendList();
   },
