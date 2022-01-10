@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-31 17:58:38
+ * @LastEditTime: 2022-01-10 09:34:43
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\views\Home.vue
@@ -20,9 +20,6 @@ export default {
   name: 'Home',
   components: {
     CustomSystem,
-  },
-  mounted() {
-    console.log('custom', this.$refs.custom.openDialog);
   },
 };
 </script>

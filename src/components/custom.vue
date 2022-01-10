@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-01-04 14:13:09
+ * @LastEditTime: 2022-01-10 09:34:21
 -->
 <template>
   <div class="custom-main">
@@ -50,12 +50,10 @@ export default {
   },
   methods: {
     openDialog() {
-      console.log('openChatDialog', this.$refs.yimu.openChatDialog);
       this.$refs.yimu.openChatDialog();
     },
     handleChangeMenu(menuName) {
       this.curMenuName = menuName;
-      console.log('home', menuName);
       // collect mark pending data
       if (['collect', 'mark', 'pending', 'data'].includes(menuName)) {
         // 通知更新接口
@@ -87,7 +85,7 @@ export default {
       fetchSideBarConfig()
         .then((res) => {
           if (res.status === 200) {
-            console.log('res.data', res.data);
+            console.log('getSideBar', res.data);
             // this.setInitMenu()
           }
         })
@@ -204,5 +202,9 @@ ul {
   /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
   /* border-radius: 6px; */
   background: #f2f2f2;
+}
+/deep/ .lemon-menu__item > .lemon-badge {
+  height: 36px;
+  line-height: 36px;
 }
 </style>

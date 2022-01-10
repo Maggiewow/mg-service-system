@@ -4,11 +4,12 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 16:12:19
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-31 11:32:09
+ * @LastEditTime: 2022-01-07 17:04:09
  */
 import { BaseUrl, CustomUrl, PAGE_SIZE, BIG_PAGE_SIZE } from './constant';
 import commonAxios from 'ym-bridge-shandianyun';
 
+// 获取客服模块侧边栏配置
 export const fetchSideBarConfig = () => {
   return commonAxios.request({
     url: BaseUrl + '/module/side-options',
@@ -51,14 +52,6 @@ export const fetchSingleStats = (page, org_id, type, keyword, order_by, sort) =>
 export const fetchAllOrgs = () => {
   return commonAxios.request({
     url: BaseUrl + '/orgs',
-    method: 'get',
-  });
-};
-
-// 获取客服模块侧边栏配置
-export const fetchCustomConfig = () => {
-  return commonAxios.request({
-    url: BaseUrl + '/module/side-options',
     method: 'get',
   });
 };
