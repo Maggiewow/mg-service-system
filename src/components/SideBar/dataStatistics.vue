@@ -249,7 +249,7 @@ export default {
 <style lang="less" scoped>
 .data-page {
   height: 100%;
-  width: 891px;
+  // width: 891px;
   padding: 5px 15px 0;
   box-sizing: border-box;
   background-color: #fff;
