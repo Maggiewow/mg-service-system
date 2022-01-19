@@ -208,7 +208,6 @@ export default {
 
       if (this.activeType === 'group') {
         fetchGroupStats(this.page, org_id, keyword, order_field, order_type).then((res) => {
-          console.log('群组-数据统计列表', res.data.data);
           if (res.status === 200) {
             const { list, total } = res.data.data;
             this.dataList = list;
@@ -219,7 +218,6 @@ export default {
         });
       } else {
         fetchSingleStats(this.page, org_id, type, keyword, order_field, order_type).then((res) => {
-          console.log('个人-数据统计列表', res.data.data);
           if (res.status === 200) {
             const { list, total } = res.data.data;
             this.dataList = list;

@@ -145,7 +145,6 @@ export default {
       let type = this.activePendKey === 'my' ? 'my' : '';
       const { status, keyword } = this.filterForm;
       fetchPendingList(this.page, type, status, keyword).then((res) => {
-        console.log('待办列表', res.data.data);
         if (res.status === 200) {
           const { list, num, pages } = res.data.data;
           // newsInfo taskInfo

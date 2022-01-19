@@ -4,16 +4,17 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 16:12:19
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-01-07 17:04:09
+ * @LastEditTime: 2022-01-19 09:26:07
  */
 import { BaseUrl, CustomUrl, PAGE_SIZE, BIG_PAGE_SIZE } from './constant';
 import commonAxios from 'ym-bridge-shandianyun';
 
 // 获取客服模块侧边栏配置
-export const fetchSideBarConfig = () => {
+export const fetchSideBarConfig = (module) => {
   return commonAxios.request({
     url: BaseUrl + '/module/side-options',
     method: 'get',
+    params: { module },
   });
 };
 

@@ -184,10 +184,8 @@ export default {
       this.collectList = [];
     },
     getCollectList(cb) {
-      console.log('getCollectList');
       let pageNow = this.page;
       fetchCollectList(this.page, this.activeType, this.collectKeyword).then((res) => {
-        console.log('收藏列表', res.data.data);
         if (res.status === 200) {
           const { list = [], pages = 1 } = res.data.data;
           let info = list.map((item) => ({

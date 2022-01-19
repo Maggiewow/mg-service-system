@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-31 17:54:10
+ * @LastEditTime: 2022-01-19 10:29:27
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\App.vue
@@ -13,6 +13,9 @@
 </template>
 
 <style lang="less">
+::v-deep .ivu-modal-wrap {
+  z-index: 2002;
+}
 .ivu-message {
   z-index: 2003 !important;
 }

@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-01-10 09:34:21
+ * @LastEditTime: 2022-01-19 10:26:56
 -->
 <template>
   <div class="custom-main">
@@ -19,13 +19,9 @@
 
 <script>
 // @ is an alias to /src
-import Collect from './SideBar/collect.vue';
-import Mark from './SideBar/mark.vue';
-import Pending from './SideBar/pending.vue';
-import DataStatistics from './SideBar/dataStatistics.vue';
-
 import { getCurrentUser } from '@/api/data.js';
 import { fetchSideBarConfig } from '@/api/chat.js';
+import { MENU_OPTIONS } from '@/libs/constant';
 import bus from '@/libs/bus';
 
 export default {
@@ -40,10 +36,9 @@ export default {
   },
   created() {
     this.getCurrentChatUser();
-    this.getSideBar();
   },
   mounted() {
-    setTimeout(this.setInitMenu, 500);
+    this.getSideBar();
   },
   destroyed() {
     console.log('销毁');
@@ -74,7 +69,6 @@ export default {
             };
             sessionStorage.setItem('current_user', JSON.stringify(user));
             sessionStorage.setItem('current_userId', id);
-            console.log('current_user', user);
           }
         })
         .catch((err) => {
@@ -82,82 +76,27 @@ export default {
         });
     },
     getSideBar() {
-      fetchSideBarConfig()
+      fetchSideBarConfig('cs')
         .then((res) => {
           if (res.status === 200) {
-            console.log('getSideBar', res.data);
-            // this.setInitMenu()
+            this.setInitMenu(res.data.data);
           }
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    setInitMenu() {
-      this.customMenu = [
-        {
-          name: 'collect',
-          isBottom: false,
-          title: '收藏',
-          unread: 0,
-          key: 'collect',
-          iconClass: 'iconfont icon-shoucang1',
-          component: Collect,
-        },
-        // {
-        //   name: 'help',
-        //   isBottom: false,
-        //   title: '帮助',
-        //   unread: 0,
-        //   key: 'help',
-        //   iconClass: 'iconfont icon-bangzhu1',
-        //   component: testComponent,
-        // },
-        {
-          name: 'mark',
-          isBottom: false,
-          title: '标记',
-          unread: 0,
-          key: 'mark',
-          iconClass: 'iconfont icon-zhiding',
-          component: Mark,
-        },
-        {
-          name: 'pending',
-          isBottom: false,
-          title: '待办',
-          unread: 0,
-          key: 'pending',
-          iconClass: 'iconfont icon-daibanshixiang',
-          component: Pending,
-        },
-        {
-          name: 'data',
-          isBottom: false,
-          title: '数据',
-          unread: 0,
-          key: 'data',
-          iconClass: 'iconfont icon-paixingbang',
-          component: DataStatistics,
-        },
-        // {
-        //   name: 'manage',
-        //   isBottom: false,
-        //   title: '管理',
-        //   unread: 0,
-        //   key: 'manage',
-        //   iconClass: 'iconfont icon-shezhi',
-        //   component: testComponent,
-        // },
-      ];
+    setInitMenu(list) {
+      list.forEach(({ id }) => {
+        if (![2, 6].includes(id) && MENU_OPTIONS[id]) {
+          this.customMenu.push(MENU_OPTIONS[id]);
+        }
+      });
     },
   },
 };
 </script>
 <style lang="less" scoped>
-/deep/ .ivu-modal-wrap {
-  z-index: 2002;
-}
 ul {
   margin-block-start: 0;
   margin-block-end: 0;

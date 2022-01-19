@@ -179,11 +179,9 @@ export default {
       this.markList = [];
     },
     getMarkList(cb) {
-      console.log('getMarkList');
       let pageNow = this.page;
       let type = this.activeMarkKey === 'my' ? 'my' : '';
       fetchMarkList(this.page, type, this.markKeyword).then((res) => {
-        console.log('标记列表', res.data.data);
         if (res.status === 200) {
           const { list, num, pages } = res.data.data;
           let info = list.map((item) => ({
