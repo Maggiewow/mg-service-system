@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2020-11-23 11:16:15
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-01-19 09:36:17
+ * @LastEditTime: 2022-02-24 16:21:47
  */
 
 import Collect from '@/components/SideBar/collect.vue';
@@ -48,7 +48,7 @@ export const MENU_OPTIONS = {
     title: '标记',
     unread: 0,
     key: 'mark',
-    iconClass: 'iconfont icon-zhiding',
+    iconClass: 'iconfont icon-fujian',
     component: Mark,
   },
   4: {
@@ -57,7 +57,7 @@ export const MENU_OPTIONS = {
     title: '待办',
     unread: 0,
     key: 'pending',
-    iconClass: 'iconfont icon-daibanshixiang',
+    iconClass: 'iconfont icon-daibanrenwu_o',
     component: Pending,
   },
   5: {

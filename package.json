@@ -13,12 +13,12 @@
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.20",
-    "view-design": "^4.3.2",
+    "view-design": "^4.7.0",
     "vue": "^2.6.11",
     "vue-infinite-loading": "^2.4.5",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
-    "yimu-im": "^0.1.50",
+    "yimu-im": "^0.1.53",
     "ym-bridge-shandianyun": "^1.0.1"
   },
   "devDependencies": {

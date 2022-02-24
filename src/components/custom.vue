@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-01-19 10:26:56
+ * @LastEditTime: 2022-02-24 17:13:22
 -->
 <template>
   <div class="custom-main">
@@ -141,9 +141,5 @@ ul {
   /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
   /* border-radius: 6px; */
   background: #f2f2f2;
-}
-/deep/ .lemon-menu__item > .lemon-badge {
-  height: 36px;
-  line-height: 36px;
 }
 </style>

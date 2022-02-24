@@ -33,8 +33,9 @@
             <div
               v-if="item.taskStatus === 1"
               class="unchecked-circle"
+              :style="item.waiterIds.includes(userId) ? 'cursor:pointer' : 'cursor:not-allowed'"
               title="完成"
-              @click="handleComplete(item.taskId)"
+              @click="handleComplete(item.taskId, item.waiterIds)"
             ></div>
             <div v-if="item.taskStatus === 200" class="checked-circle"></div>
           </div>
@@ -96,7 +97,7 @@ export default {
       pendList: [],
       page: 1,
       finished: false,
-      user: { id: '', displayName: '', orgid: '', avatar: '' },
+      userId: '',
       waitTaskId: '',
       completePop: false,
     };
@@ -122,10 +123,7 @@ export default {
     },
   },
   mounted() {
-    let userInfo = sessionStorage.getItem('current_user');
-    if (userInfo) {
-      this.user = JSON.parse(userInfo);
-    }
+    this.userId = sessionStorage.getItem('current_userId') || '';
 
     bus.$on('updatepending', () => {
       this.refreshParam();
@@ -152,6 +150,7 @@ export default {
             list.map(({ taskInfo }) => ({
               ...taskInfo,
               taskWaiter: taskInfo.taskWaiter.map(({ name }) => name).join(' '),
+              waiterIds: taskInfo.taskWaiter.map(({ id }) => String(id)),
             })) || [];
 
           if (pageNow === 1) {
@@ -182,7 +181,12 @@ export default {
         this.finished ? $state.complete() : $state.loaded();
       });
     },
-    handleComplete(waitTaskId) {
+    handleComplete(waitTaskId, waiterIds) {
+      // 判断waiterIds
+      if (!waiterIds.includes(this.userId)) {
+        return;
+      }
+
       this.waitTaskId = waitTaskId;
       this.completePop = true;
       // this.$Modal.confirm({
