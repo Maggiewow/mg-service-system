@@ -4,12 +4,13 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-02-24 17:13:22
+ * @LastEditTime: 2022-02-24 17:59:23
 -->
 <template>
   <div class="custom-main">
     <yimu-im
       ref="yimu"
+      :theme="theme"
       :customMenu="customMenu"
       :fromSystem="fromSystem"
       @change-menu="handleChangeMenu"
@@ -26,6 +27,13 @@ import bus from '@/libs/bus';
 
 export default {
   name: 'custom',
+  props: {
+    theme: {
+      type: String,
+      required: false,
+      default: 'light',
+    },
+  },
   data() {
     return {
       customMenu: [],

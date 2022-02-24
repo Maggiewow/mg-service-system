@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2022-01-10 09:34:43
+ * @LastEditTime: 2022-02-24 18:00:06
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\views\Home.vue
 -->
 <template>
   <div class="comps">
-    <custom-system ref="custom"></custom-system>
+    <custom-system ref="custom" theme="light"></custom-system>
   </div>
 </template>
 
