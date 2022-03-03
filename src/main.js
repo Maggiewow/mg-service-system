@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2021-12-31 18:12:09
+ * @LastEditTime: 2022-03-03 11:42:57
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\main.js
@@ -30,6 +30,7 @@ import App from './App.vue';
 import store from './store';
 import config from '@/config';
 import router from './router';
+import './index.less';
 
 import yimuIm from 'yimu-im';
 import LemonIMUI from 'lemon-imui';
