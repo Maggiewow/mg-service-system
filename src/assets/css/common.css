@@ -86,6 +86,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -100,22 +101,22 @@ nav,
 section {
   display: block;
 }
+
 a {
   color: #333;
   text-decoration: none;
 }
-body {
-  line-height: 1;
-  font-family: "Microsoft YaHei","微软雅黑";
-}
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,10 +124,12 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 /*清除浮动样式*/
 .clear {
   clear: both;
@@ -140,16 +143,16 @@ table {
   float: right;
 }
 
-.clearfix:after{
+.clearfix:after {
   display: block;
   clear: both;
   content: "";
-  visibility: hidden; 
+  visibility: hidden;
   height: 0;
 }
 
-.clearfix{
-  zoom:1
+.clearfix {
+  zoom: 1
 }
 
 .over_hide {
@@ -157,12 +160,17 @@ table {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .over_hide_2 {
   word-break: break-all;
-  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
-  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
-  -webkit-line-clamp: 2; /** 显示的行数 **/
-  overflow: hidden;  /** 隐藏超出的内容 **/
+  display: -webkit-box;
+  /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical;
+  /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2;
+  /** 显示的行数 **/
+  overflow: hidden;
+  /** 隐藏超出的内容 **/
   text-overflow: ellipsis;
 }
 
