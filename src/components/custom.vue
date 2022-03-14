@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-02-24 17:59:23
+ * @LastEditTime: 2022-03-14 10:04:45
 -->
 <template>
   <div class="custom-main">
@@ -24,7 +24,7 @@ import { getCurrentUser } from '@/api/data.js';
 import { fetchSideBarConfig } from '@/api/chat.js';
 import { MENU_OPTIONS } from '@/libs/constant';
 import bus from '@/libs/bus';
-
+import less from 'less';
 export default {
   name: 'custom',
   props: {
@@ -47,11 +47,33 @@ export default {
   },
   mounted() {
     this.getSideBar();
+
+    // setTimeout(() => {
+    //   console.log('引入');
+    //   // 生成新节点，引入css
+    //   this.setCSTheme('large');
+    // }, 5000);
   },
   destroyed() {
     console.log('销毁');
   },
   methods: {
+    // 根据接口获取的字体大小引入css文件
+    setCSTheme(size) {
+      // 移除旧的节点
+      const oldNode = document.querySelector('#mg-service-font-link');
+      if (oldNode) {
+        oldNode.parentNode.removeChild(document.querySelector('#mg-service-font-link'));
+      }
+
+      // 生成新节点，引入css
+      const link = document.createElement('link');
+      link.id = 'mg-service-font-link';
+      link.type = 'text/css';
+      link.rel = 'stylesheet';
+      link.href = require(`@/assets/css/${size}.less`);
+      document.getElementsByTagName('head')[0].appendChild(link);
+    },
     openDialog() {
       this.$refs.yimu.openChatDialog();
     },

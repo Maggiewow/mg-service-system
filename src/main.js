@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2022-03-03 11:42:57
+ * @LastEditTime: 2022-03-11 14:57:41
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\main.js
@@ -14,6 +14,7 @@ import {
   Table,
   Input,
   Form,
+  FormItem,
   Select,
   Option,
   Time,
@@ -42,6 +43,7 @@ Vue.component('Button', Button);
 Vue.component('Table', Table);
 Vue.component('Input', Input);
 Vue.component('Form', Form);
+Vue.component('FormItem', FormItem);
 Vue.component('Select', Select);
 Vue.component('Option', Option);
 Vue.component('Time', Time);

@@ -1,6 +1,6 @@
 <template>
   <div class="pend-page">
-    <Tabs v-model="activePendKey">
+    <Tabs v-model="activePendKey" class="cs-theme-tab-size">
       <TabPane label="我的待办" name="my"></TabPane>
       <TabPane label="所有待办" name="all"></TabPane>
     </Tabs>
@@ -27,7 +27,7 @@
         </Input>
       </div>
       <div class="pend-list">
-        <div class="pend-item" v-for="item in pendList" :key="item.taskId">
+        <div class="pend-item cs-theme-normal-size" v-for="item in pendList" :key="item.taskId">
           <div class="pend-status">
             <!-- 1未处理 200完成 -->
             <div
@@ -46,7 +46,7 @@
             >
               {{ item.taskContent }}
             </p>
-            <div class="send-user">
+            <div class="send-user cs-theme-grey-size">
               <p class="user">{{ item.taskWaiter }}</p>
               <p class="time">{{ item.createdAt }}</p>
             </div>
@@ -270,12 +270,12 @@ export default {
     overflow-y: scroll;
     height: 444px;
     .pend-item {
+      font-size: 14px;
       margin-bottom: 10px;
       padding: 5px 15px;
       border: 1px solid #ececec;
       background: #fff;
       border-radius: 4px;
-      font-size: 14px;
       line-height: 30px;
 
       display: flex;
@@ -332,17 +332,16 @@ export default {
         color: #333;
       }
       .send-user {
+        font-size: 12px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .user {
           margin-right: 20px;
-          font-size: 12px;
           color: #333;
         }
         .time {
           color: #999;
-          font-size: 12px;
         }
       }
     }

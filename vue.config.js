@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-24 09:12:36
- * @LastEditTime: 2021-04-25 15:04:45
+ * @LastEditTime: 2022-03-11 15:23:40
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\vue.config.js
@@ -58,9 +58,33 @@ module.exports = {
       .tap((options) => {
         return options;
       });
+
+    // 下载sass-resources-loader 设置less文件全局变量
+    const oneOfsMap = config.module.rule('less').oneOfs.store;
+    oneOfsMap.forEach((item) => {
+      item
+        .use('sass-resources-loader')
+        .loader('sass-resources-loader')
+        .options({
+          // 这里填入你的样式文件地址
+          resources: './src/assets/css/common.less',
+        })
+        .end();
+    });
   },
   css: {
     extract: false,
+    // css预设器配置项
+    loaderOptions: {
+      less: {
+        // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，直接配置选项。
+        modifyVars: {
+          // 初始化可直接覆盖变量
+          '@error-color': '#1890FF',
+        },
+        javascriptEnabled: true,
+      },
+    },
   },
   devServer: {
     // proxy: 'https://user.shandian8.com',

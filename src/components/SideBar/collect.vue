@@ -1,6 +1,6 @@
 <template>
   <div class="collect-page">
-    <Tabs v-model="activeType">
+    <Tabs v-model="activeType" class="cs-theme-tab-size">
       <TabPane label="文字" name="text"></TabPane>
       <TabPane label="图片" name="image"></TabPane>
       <TabPane label="视频" name="video"></TabPane>
@@ -18,7 +18,7 @@
       </Input>
     </div>
     <div class="collect-list narrow-scroll-bar">
-      <div class="collect-item" v-for="item in collectList" :key="item.id">
+      <div class="collect-item cs-theme-normal-size" v-for="item in collectList" :key="item.id">
         <div class="top-user">{{ item.collectUserName }}</div>
         <!-- <p class="msg-content">{{ item.newsContent }}</p> -->
 
@@ -36,19 +36,21 @@
           @click="downloadFile(item.newsContent.fileUrl)"
         >
           <div class="content-file__inner">
-            <p class="content-file__name">{{ item.newsContent.name }}</p>
-            <p class="content-file__byte">{{ computeFileSize(item.newsContent.size) }}</p>
+            <p class="content-file__name cs-theme-normal-size">{{ item.newsContent.name }}</p>
+            <p class="content-file__byte cs-theme-grey-size">
+              {{ computeFileSize(item.newsContent.size) }}
+            </p>
           </div>
           <div class="content-file__sfx">
             <i class="lemon-icon-attah" />
           </div>
         </div>
 
-        <div class="send-user">
+        <div class="send-user cs-theme-grey-size">
           <p class="user">来自：{{ item.newsUserName }}</p>
           <p class="time">{{ item.pushTime }}</p>
         </div>
-        <div class="group-name">
+        <div class="group-name cs-theme-grey-size">
           <p class="user">{{ calcDisplayName(item) }}</p>
           <i class="iconfont icon-jinru" title="查看" @click="checkHistory(item)"></i>
         </div>
@@ -254,6 +256,7 @@ export default {
     overflow-y: scroll;
     height: 444px;
     .collect-item {
+      // .cs-theme-normal-size;
       margin-bottom: 10px;
       padding: 5px 15px;
       border: 1px solid #ececec;
@@ -306,35 +309,27 @@ export default {
       }
 
       .send-user {
+        font-size: 12px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .user {
           margin-right: 20px;
-          font-size: 12px;
           color: #666;
         }
         .time {
           color: #999;
-          font-size: 12px;
-        }
-        .icon-jinru {
-          padding: 0 10px;
-          cursor: pointer;
-          font-size: 18px;
-          color: #999;
         }
       }
       .group-name {
-        border-top: 1px solid #ececec;
         font-size: 12px;
+        border-top: 1px solid #ececec;
         color: #666;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .user {
           margin-right: 20px;
-          font-size: 12px;
           color: #666;
         }
         .icon-jinru {

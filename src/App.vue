@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2022-01-19 10:29:27
+ * @LastEditTime: 2022-03-11 17:03:17
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\App.vue
@@ -13,6 +13,15 @@
 </template>
 
 <style lang="less">
+@normalThemeSize: 14px;
+@greyThemeSize: 12px;
+
+.cs-theme-normal-size {
+  font-size: @normalThemeSize;
+}
+.cs-theme-grey-size {
+  font-size: @greyThemeSize;
+}
 ::v-deep .ivu-modal-wrap {
   z-index: 2002;
 }

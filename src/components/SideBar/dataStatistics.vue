@@ -1,6 +1,6 @@
 <template>
   <div class="data-page">
-    <Tabs v-model="activeType">
+    <Tabs v-model="activeType" class="cs-theme-tab-size">
       <TabPane label="群聊统计" name="group"></TabPane>
       <TabPane label="个人统计" name="single"></TabPane>
     </Tabs>
@@ -39,7 +39,7 @@
       </div>
 
       <Table
-        class="data-table"
+        class="data-table cs-theme-table-size"
         :columns="activeType === 'group' ? groupColumns : singleColumns"
         :data="dataList"
         :loading="isLoading"

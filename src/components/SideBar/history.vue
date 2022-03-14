@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-24 15:26:54
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2021-12-30 14:50:32
+ * @LastEditTime: 2022-03-14 09:56:57
 -->
 
 <template>
@@ -18,13 +18,18 @@
       <div
         v-for="(item, index) in historyList"
         :key="index"
-        :class="['per-info', 'history-item', contact.imId === item.id && 'cur-history-item']"
+        :class="[
+          'per-info',
+          'history-item',
+          'cs-theme-normal-size',
+          contact.imId === item.id && 'cur-history-item',
+        ]"
       >
         <div class="left-avatar">
           <img :src="item.avatar" alt="头像" />
         </div>
         <div class="right-infos">
-          <div class="send-user">
+          <div class="send-user cs-theme-grey-size">
             <p class="user">{{ item.sendUser }}</p>
             <p class="time">{{ item.sendTime }}</p>
           </div>
@@ -43,8 +48,10 @@
             @click="downloadFile(item.content.fileUrl)"
           >
             <div class="content-file__inner">
-              <p class="content-file__name">{{ item.content.name }}</p>
-              <p class="content-file__byte">{{ computeFileSize(item.content.size) }}</p>
+              <p class="content-file__name cs-theme-normal-size">{{ item.content.name }}</p>
+              <p class="content-file__byte cs-theme-grey-size">
+                {{ computeFileSize(item.content.size) }}
+              </p>
             </div>
             <div class="content-file__sfx">
               <i class="lemon-icon-attah" />
@@ -308,17 +315,16 @@ export default {
       .right-infos {
         width: 460px;
         .send-user {
+          font-size: 12px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           .user {
             margin-right: 20px;
-            font-size: 12px;
             color: #666;
           }
           .time {
             color: #999;
-            font-size: 12px;
           }
         }
         .msg-content {

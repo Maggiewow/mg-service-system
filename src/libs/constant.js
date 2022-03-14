@@ -71,8 +71,8 @@ export const MENU_OPTIONS = {
   },
   6: {
     name: 'manage',
-    isBottom: false,
-    title: '管理',
+    isBottom: true,
+    title: '设置',
     unread: 0,
     key: 'manage',
     iconClass: 'iconfont icon-shezhi',

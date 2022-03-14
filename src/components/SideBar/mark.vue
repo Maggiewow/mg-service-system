@@ -1,6 +1,6 @@
 <template>
   <div class="mark-page">
-    <Tabs v-model="activeMarkKey">
+    <Tabs v-model="activeMarkKey" class="cs-theme-tab-size">
       <TabPane label="我的标记" name="my"></TabPane>
       <TabPane label="所有标记" name="all"></TabPane>
     </Tabs>
@@ -12,10 +12,12 @@
       </div>
       <div class="mark-list">
         <div class="mark-item" v-for="item in markList" :key="item.id">
-          <div class="top-user">{{ item.markUserName }}</div>
+          <div class="top-user cs-theme-grey-size">{{ item.markUserName }}</div>
           <!-- <p class="msg-content">{{ item.newsContent }}</p> -->
 
-          <p v-if="item.type === 'text'" class="msg-content">{{ item.newsContent.content }}</p>
+          <p v-if="item.type === 'text'" class="msg-content cs-theme-normal-size">
+            {{ item.newsContent.content }}
+          </p>
           <img
             v-if="item.type === 'image'"
             class="content-img"
@@ -29,19 +31,21 @@
             @click="downloadFile(item.newsContent.fileUrl)"
           >
             <div class="content-file__inner">
-              <p class="content-file__name">{{ item.newsContent.name }}</p>
-              <p class="content-file__byte">{{ computeFileSize(item.newsContent.size) }}</p>
+              <p class="content-file__name cs-theme-normal-size">{{ item.newsContent.name }}</p>
+              <p class="content-file__byte cs-theme-grey-size">
+                {{ computeFileSize(item.newsContent.size) }}
+              </p>
             </div>
             <div class="content-file__sfx">
               <i class="lemon-icon-attah" />
             </div>
           </div>
 
-          <div class="send-user">
+          <div class="send-user cs-theme-grey-size">
             <p class="user">来自：{{ item.newsUserName }}</p>
             <p class="time">{{ item.pushTime }}</p>
           </div>
-          <div class="group-name">
+          <div class="group-name cs-theme-grey-size">
             <p class="user">{{ calcDisplayName(item) }}</p>
             <i class="iconfont icon-jinru" title="查看" @click="checkHistory(item)"></i>
           </div>
@@ -258,9 +262,10 @@ export default {
         border: 1px solid #ececec;
         background: #fff;
         border-radius: 4px;
-        font-size: 14px;
+        // font-size: 14px;
         line-height: 30px;
         .top-user {
+          font-size: 14px;
           text-align: right;
           color: #999;
         }
@@ -305,35 +310,27 @@ export default {
         }
 
         .send-user {
+          font-size: 12px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           .user {
             margin-right: 20px;
-            font-size: 12px;
             color: #666;
           }
           .time {
             color: #999;
-            font-size: 12px;
-          }
-          .icon-jinru {
-            padding: 0 10px;
-            cursor: pointer;
-            font-size: 18px;
-            color: #999;
           }
         }
         .group-name {
-          border-top: 1px solid #ececec;
           font-size: 12px;
+          border-top: 1px solid #ececec;
           color: #666;
           display: flex;
           justify-content: space-between;
           align-items: center;
           .user {
             margin-right: 20px;
-            font-size: 12px;
             color: #666;
           }
           .icon-jinru {
