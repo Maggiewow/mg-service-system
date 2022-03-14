@@ -248,6 +248,7 @@ export default {
 
 <style lang="less" scoped>
 .data-page {
+  white-space: normal;
   height: 100%;
   // width: 891px;
   padding: 5px 15px 0;
@@ -284,10 +285,12 @@ export default {
     }
   }
   .data-table {
+    white-space: normal;
     margin-top: 10px;
   }
 }
 .page-show {
+  white-space: normal;
   text-align: center;
   margin-top: 20px;
   .ivu-page-item-jump-prev:after,

@@ -70,7 +70,7 @@
       @on-ok="confirmComplete"
       transfer
     >
-      <p class="tips">确定已完成当前待办事项吗？</p>
+      <p class="tips cs-theme-grey-size">确定已完成当前待办事项吗？</p>
     </Modal>
   </div>
 </template>

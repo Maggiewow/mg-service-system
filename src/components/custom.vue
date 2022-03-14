@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-03-14 10:04:45
+ * @LastEditTime: 2022-03-14 10:14:47
 -->
 <template>
   <div class="custom-main">
@@ -48,6 +48,7 @@ export default {
   mounted() {
     this.getSideBar();
 
+    this.setCSTheme('middle'); // small middle large
     // setTimeout(() => {
     //   console.log('引入');
     //   // 生成新节点，引入css
