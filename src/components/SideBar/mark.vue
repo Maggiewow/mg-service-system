@@ -1,6 +1,6 @@
 <template>
   <div class="mark-page">
-    <Tabs v-model="activeMarkKey" class="cs-theme-tab-size">
+    <Tabs v-model="activeMarkKey" class="cs-theme-tab-size enable-drag-area">
       <TabPane label="我的标记" name="my"></TabPane>
       <TabPane label="所有标记" name="all"></TabPane>
     </Tabs>

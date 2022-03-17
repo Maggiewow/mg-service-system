@@ -1,6 +1,6 @@
 <template>
   <div class="collect-page">
-    <Tabs v-model="activeType" class="cs-theme-tab-size">
+    <Tabs v-model="activeType" class="cs-theme-tab-size enable-drag-area">
       <TabPane label="文字" name="text"></TabPane>
       <TabPane label="图片" name="image"></TabPane>
       <TabPane label="视频" name="video"></TabPane>

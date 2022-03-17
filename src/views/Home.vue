@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2022-03-11 15:29:36
+ * @LastEditTime: 2022-03-17 10:02:15
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\views\Home.vue
@@ -23,3 +23,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.comps {
+  min-height: 100vh;
+  width: 100%;
+}
+</style>

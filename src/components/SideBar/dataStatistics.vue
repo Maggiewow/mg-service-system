@@ -1,6 +1,6 @@
 <template>
   <div class="data-page">
-    <Tabs v-model="activeType" class="cs-theme-tab-size">
+    <Tabs v-model="activeType" class="cs-theme-tab-size enable-drag-area">
       <TabPane label="群聊统计" name="group"></TabPane>
       <TabPane label="个人统计" name="single"></TabPane>
     </Tabs>
@@ -250,12 +250,16 @@ export default {
 .data-page {
   white-space: normal;
   height: 100%;
-  // width: 891px;
   padding: 5px 15px 0;
   box-sizing: border-box;
   background-color: #fff;
   .ivu-tabs {
     height: 72px;
+    white-space: normal;
+  }
+  /deep/ .ivu-tabs-bar {
+    white-space: normal;
+    margin-top: 21px; // 18 21 24
   }
   .list-block {
     padding: 0 10px 10px 0;
@@ -293,9 +297,5 @@ export default {
   white-space: normal;
   text-align: center;
   margin-top: 20px;
-  .ivu-page-item-jump-prev:after,
-  .ivu-page-item-jump-next:after {
-    content: '\2022\2022\2022';
-  }
 }
 </style>

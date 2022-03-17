@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-03-14 10:14:47
+ * @LastEditTime: 2022-03-17 10:45:41
 -->
 <template>
   <div class="custom-main">
@@ -14,6 +14,7 @@
       :customMenu="customMenu"
       :fromSystem="fromSystem"
       @change-menu="handleChangeMenu"
+      @set-font="setCSTheme"
     ></yimu-im>
   </div>
 </template>
@@ -24,7 +25,7 @@ import { getCurrentUser } from '@/api/data.js';
 import { fetchSideBarConfig } from '@/api/chat.js';
 import { MENU_OPTIONS } from '@/libs/constant';
 import bus from '@/libs/bus';
-import less from 'less';
+
 export default {
   name: 'custom',
   props: {
@@ -47,20 +48,13 @@ export default {
   },
   mounted() {
     this.getSideBar();
-
-    this.setCSTheme('middle'); // small middle large
-    // setTimeout(() => {
-    //   console.log('引入');
-    //   // 生成新节点，引入css
-    //   this.setCSTheme('large');
-    // }, 5000);
   },
   destroyed() {
     console.log('销毁');
   },
   methods: {
-    // 根据接口获取的字体大小引入css文件
-    setCSTheme(size) {
+    // 根据IM通知的字体大小引入css文件 small middle large
+    setCSTheme(size = 'middle') {
       // 移除旧的节点
       const oldNode = document.querySelector('#mg-service-font-link');
       if (oldNode) {
@@ -80,6 +74,12 @@ export default {
     },
     handleChangeMenu(menuName) {
       this.curMenuName = menuName;
+      if (menuName === 'manage') {
+        let dom = document.getElementsByClassName('set-page')[0];
+        console.log('dom', dom, dom.style);
+        dom.style['white-space'] = 'normal';
+      }
+
       // collect mark pending data
       if (['collect', 'mark', 'pending', 'data'].includes(menuName)) {
         // 通知更新接口

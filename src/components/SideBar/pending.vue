@@ -1,6 +1,6 @@
 <template>
   <div class="pend-page">
-    <Tabs v-model="activePendKey" class="cs-theme-tab-size">
+    <Tabs v-model="activePendKey" class="cs-theme-tab-size enable-drag-area">
       <TabPane label="我的待办" name="my"></TabPane>
       <TabPane label="所有待办" name="all"></TabPane>
     </Tabs>
