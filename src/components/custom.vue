@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-03-17 10:45:41
+ * @LastEditTime: 2022-03-18 17:59:14
 -->
 <template>
   <div class="custom-main">
@@ -74,12 +74,6 @@ export default {
     },
     handleChangeMenu(menuName) {
       this.curMenuName = menuName;
-      if (menuName === 'manage') {
-        let dom = document.getElementsByClassName('set-page')[0];
-        console.log('dom', dom, dom.style);
-        dom.style['white-space'] = 'normal';
-      }
-
       // collect mark pending data
       if (['collect', 'mark', 'pending', 'data'].includes(menuName)) {
         // 通知更新接口
