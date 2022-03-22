@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2022-03-22 10:14:49
+ * @LastEditTime: 2022-03-22 17:16:50
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\main.js
@@ -24,6 +24,12 @@ import {
   Icon,
   Modal,
   Page,
+  Switch,
+  RadioGroup,
+  Radio,
+  Spin,
+  Row,
+  Col,
 } from 'view-design';
 import 'view-design/dist/styles/iview.css';
 
@@ -53,6 +59,12 @@ Vue.component('Message', Message);
 Vue.component('Icon', Icon);
 Vue.component('Modal', Modal);
 Vue.component('Page', Page);
+Vue.component('i-switch', Switch);
+Vue.component('RadioGroup', RadioGroup);
+Vue.component('Radio', Radio);
+Vue.component('Spin', Spin);
+Vue.component('Row', Row);
+Vue.component('Col', Col);
 
 Vue.config.productionTip = false;
 Vue.prototype.$config = config;
