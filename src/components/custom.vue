@@ -4,7 +4,7 @@
  * @作者: 赵婷婷
  * @Date: 2021-12-22 15:35:02
  * @LastEditors: 赵婷婷
- * @LastEditTime: 2022-03-18 17:59:14
+ * @LastEditTime: 2022-03-28 11:09:33
 -->
 <template>
   <div class="custom-main">
@@ -104,15 +104,18 @@ export default {
       fetchSideBarConfig('cs')
         .then((res) => {
           if (res.status === 200) {
-            this.setInitMenu(res.data.data);
+            let ids = res.data.data.map(({ id }) => id);
+            let defaultList = [3, 4]; // 3 4 每个人都有
+            let list = [...new Set([...ids, ...defaultList])];
+            this.setInitMenu(list);
           }
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    setInitMenu(list) {
-      list.forEach(({ id }) => {
+    setInitMenu(idList) {
+      idList.forEach((id) => {
         if (![2, 6].includes(id) && MENU_OPTIONS[id]) {
           this.customMenu.push(MENU_OPTIONS[id]);
         }
