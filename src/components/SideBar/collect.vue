@@ -3,7 +3,7 @@
     <Tabs v-model="activeType" class="cs-theme-tab-size enable-drag-area">
       <TabPane label="文字" name="text"></TabPane>
       <TabPane label="图片" name="image"></TabPane>
-      <TabPane label="视频" name="video"></TabPane>
+      <!-- <TabPane label="视频" name="video"></TabPane> -->
       <TabPane label="文件" name="file"></TabPane>
     </Tabs>
     <div class="filter">
