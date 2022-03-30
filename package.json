@@ -18,7 +18,7 @@
     "vue-infinite-loading": "^2.4.5",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
-    "yimu-im": "^0.2.10",
+    "yimu-im": "^0.2.11",
     "ym-bridge-shandianyun": "^1.0.1"
   },
   "devDependencies": {
