@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2022-03-22 17:16:50
+ * @LastEditTime: 2022-03-31 15:07:25
  * @LastEditors: 赵婷婷
  * @Description: In User Settings Edit
  * @FilePath: \sucai-modal\src\main.js
@@ -30,6 +30,7 @@ import {
   Spin,
   Row,
   Col,
+  Notice,
 } from 'view-design';
 import 'view-design/dist/styles/iview.css';
 
@@ -70,6 +71,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$config = config;
 Vue.prototype.$Message = Message;
 Vue.prototype.$Modal = Modal;
+Vue.prototype.$Notice = Notice;
 
 new Vue({
   router,
